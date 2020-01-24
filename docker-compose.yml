@@ -1,0 +1,21 @@
+version: "3.5"
+services:
+  odp-identity:
+    container_name: odp-identity
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
+    environment:
+      - FLASK_APP=odpidentity
+      - FLASK_ENV
+      - FLASK_SECRET_KEY
+      - DATABASE_URL
+      - MAIL_SERVER
+      - OAUTH2_CLIENT_ID=odp-identity
+      - OAUTH2_CLIENT_SECRET
+      - OAUTH2_SCOPES=openid
+      - HYDRA_PUBLIC_URL
+      - HYDRA_ADMIN_URL
+      - HYDRA_LOGIN_EXPIRY
+    restart: always
