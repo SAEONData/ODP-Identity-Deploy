@@ -2,7 +2,7 @@
 
 Docker-based deployment of the [ODP Identity](https://github.com/SAEONData/ODP-Identity) service.
 
-## Setup
+## Installation
 
 Create a `.env` file and set the following environment variables:
 
@@ -17,8 +17,6 @@ Create a `.env` file and set the following environment variables:
 
 _N.B. Make sure to generate cryptographically strong secrets for `FLASK_SECRET_KEY` and `OAUTH2_CLIENT_SECRET`,
 and to back these up securely._
-
-## Run
 
 Start the identity service container in the background:
 
@@ -35,6 +33,4 @@ carry out the following steps:
 1. Upgrade Python libraries as necessary.
 1. Ensure that unit tests for the Identity Service and project dependencies all pass.
 1. Run the following command:
-
-
-    pip freeze | sed -E '/^(-e\s|pkg-resources==)/d' > requirements.txt
+`pip freeze | sed -E '/^(-e\s|pkg-resources==)/d' > requirements.txt`
