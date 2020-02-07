@@ -4,7 +4,7 @@ Docker-based deployment of the [ODP Identity](https://github.com/SAEONData/ODP-I
 
 ## Installation
 
-Create a `.env` file and set the following environment variables:
+Create a `.env` file in the project directory on the target machine, and set the following environment variables:
 
 - **`FLASK_ENV`**: deployment environment: `development`|`testing`|`staging`|`production`
 - **`FLASK_SECRET_KEY`**: Flask [SECRET_KEY](https://flask.palletsprojects.com/en/1.1.x/config/#SECRET_KEY)
@@ -20,6 +20,18 @@ and to back these up securely._
 
 Start the identity service container in the background:
 
+    sudo docker-compose up -d
+
+## Upgrading
+
+In the project directory on the target machine, run:
+
+    git pull
+
+Update the `.env` file as necessary, then run:
+
+    sudo docker-compose down
+    sudo docker-compose build --no-cache
     sudo docker-compose up -d
 
 ## Notes
