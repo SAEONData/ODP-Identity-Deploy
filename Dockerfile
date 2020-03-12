@@ -1,5 +1,8 @@
 FROM python:3.6
 
+COPY staging-ca.crt /usr/local/share/ca-certificates/
+RUN update-ca-certificates
+
 WORKDIR /srv
 
 RUN git clone https://github.com/SAEONData/ODP-Identity.git
