@@ -18,4 +18,5 @@ services:
       - HYDRA_PUBLIC_URL
       - HYDRA_ADMIN_URL
       - HYDRA_LOGIN_EXPIRY
+      - REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
     restart: always
