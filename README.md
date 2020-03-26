@@ -8,6 +8,7 @@ Create a `.env` file in the project directory on the target machine, and set the
 
 - **`FLASK_ENV`**: deployment environment: `development`|`testing`|`staging`|`production`
 - **`FLASK_SECRET_KEY`**: Flask [SECRET_KEY](https://flask.palletsprojects.com/en/1.1.x/config/#SECRET_KEY)
+- **`PROXY_IP`**: (optional) IP address of reverse proxy if running on a different host
 - **`DATABASE_URL`**: ODP accounts database URL
 - **`MAIL_SERVER`**: IP / hostname of mail server used for sending email verifications / password resets
 - **`HYDRA_PUBLIC_URL`**: URL of the Hydra public API
@@ -20,7 +21,7 @@ and to back these up securely._
 
 Start the identity service container in the background:
 
-    sudo docker-compose up -d
+    docker-compose up -d
 
 ## Upgrading
 
@@ -30,9 +31,9 @@ In the project directory on the target machine, run:
 
 Update the `.env` file as necessary, then run:
 
-    sudo docker-compose down
-    sudo docker-compose build --no-cache
-    sudo docker-compose up -d
+    docker-compose down
+    docker-compose build --no-cache
+    docker-compose up -d
 
 ## Notes
 
