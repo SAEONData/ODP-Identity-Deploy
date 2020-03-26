@@ -18,4 +18,7 @@ RUN cd ODP-AccountsLib && pip install .
 RUN cd Hydra-Admin-Client && pip install .
 RUN cd Hydra-OAuth2-Blueprint && pip install .
 
-CMD ["gunicorn", "-b 127.0.0.1:9024", "odpidentity:create_app()"]
+ARG PROXY_IP
+ENV GUNICORN_CMD_ARGS --forwarded-allow-ips=${PROXY_IP}
+
+CMD ["gunicorn", "-b 0.0.0.0:9024", "odpidentity:create_app()"]

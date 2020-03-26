@@ -1,11 +1,20 @@
 version: "3.5"
+
+networks:
+  odp-identity-net:
+    name: odp-identity-net
+
 services:
   odp-identity:
     container_name: odp-identity
     build:
       context: .
-      dockerfile: Dockerfile
-    network_mode: host
+      args:
+        - PROXY_IP
+    networks:
+      - odp-identity-net
+    ports:
+      - "9024:9024"
     environment:
       - FLASK_APP=odpidentity
       - FLASK_ENV
