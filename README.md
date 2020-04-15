@@ -1,5 +1,7 @@
 # ODP-Identity-Deploy
 
+***Note: This work has been incorporated into, and superseded by, the [Open Data Platform](https://github.com/SAEONData/Open-Data-Platform) project.***
+
 Docker-based deployment of the [ODP Identity](https://github.com/SAEONData/ODP-Identity) service.
 
 ## Installation
